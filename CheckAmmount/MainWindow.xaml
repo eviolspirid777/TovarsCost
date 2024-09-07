@@ -1,0 +1,60 @@
+﻿<Window x:Class="CheckAmmount.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CheckAmmount"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid Background="AliceBlue">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="21*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0">
+            <Menu Grid.Row="0">
+                <MenuItem Header="Файл" Grid.Row="0">
+                    <MenuItem Header="Открыть" Click="OpenFileClick"></MenuItem>
+                    <MenuItem Header="Сохранить"></MenuItem>
+                </MenuItem>
+            </Menu>
+        </StackPanel>
+        <Grid Grid.Row="1" Grid.RowSpan="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <DataGrid x:Name="ValuesTable" AutoGenerateColumns="True" Margin="10"/>
+            <GridSplitter VerticalAlignment="Stretch" Width="3px" Height="360" Background="Gray" Grid.Row="1"/>
+            <Grid Grid.Column="1">
+                <Grid Margin="5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="4*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <ListBox x:Name="CombinationsList" Margin="5">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Vertical">
+                                    <TextBlock Text="{Binding Name}" FontWeight="Bold"/>
+                                    <TextBlock Text="{Binding Count}" />
+                                    <TextBlock Text="{Binding Cost, StringFormat='{}{0:C}'}" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                    <Grid Grid.Row="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="3*"></RowDefinition>
+                            <RowDefinition Height="2*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <GroupBox x:Name="ammount" Header="Стоимость в чеке" >
+                            <TextBox x:Name="ammountTextBox"/>
+                        </GroupBox>
+                        <Button Grid.Row="1" Margin="1"  Click="CombinationClick">Расчитать</Button>
+                    </Grid>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>
