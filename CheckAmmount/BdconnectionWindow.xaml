@@ -1,0 +1,23 @@
+﻿<Window x:Class="CheckAmmount.BdconnectionWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CheckAmmount"
+        mc:Ignorable="d"
+        Title="BdconnectionWindow" Height="220" Width="320">
+    <Grid>
+        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Width="308" Margin="5">
+            <GroupBox x:Name="username" Header="Пользователь">
+                <TextBox x:Name="usernameTextbox"/>
+            </GroupBox>
+            <GroupBox x:Name="password" Header="Пароль">
+                <TextBox x:Name="passwordTextbox"/>
+            </GroupBox>
+            <GroupBox x:Name="ip" Header="ip/adress">
+                <TextBox x:Name="ipTextbox"/>
+            </GroupBox>
+            <Button Margin="0,10,0,0" Height="25" Click="OpenConnection">Создать подключение</Button>
+        </StackPanel>
+    </Grid>
+</Window>
