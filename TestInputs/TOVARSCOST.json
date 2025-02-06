@@ -1,0 +1,27 @@
+[
+    {
+        "Name": "Tovar A",
+        "Price": 100.25,
+        "Quantity": 3
+    },
+    {
+        "Name": "Tovar B",
+        "Price": 200.75,
+        "Quantity": 10
+    },
+    {
+        "Name": "Tovar C",
+        "Price": 50.25,
+        "Quantity": 50
+    },
+    {
+        "Name": "Tovar D",
+        "Price": 145.50,
+        "Quantity": 133
+    },
+    {
+        "Name": "Tovar E",
+        "Price": 120.00,
+        "Quantity": 23
+    }
+]
